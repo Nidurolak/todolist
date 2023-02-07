@@ -58,7 +58,7 @@ function App() {
     ID.isComplete = bool;
     setIscomplete(() => {
       return newTodo
-    })
+    }) 
   }
 
   const todoDelete = (id) =>{
