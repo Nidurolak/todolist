@@ -52,30 +52,13 @@ function App() {
     }
     
   }
-  const completeOrUndoToDo = (id) => {
-    //const newTodo = todo.map((list) => {if(list.id == id){list.isComplete ==false ?list.isComplete = true :list.isComplete = false}})
-    //console.log(newTodo)
-    //인덱스값이 id가 아니라 id값을 가진 인덱스를 찾아야해
-    //const bool = todo[todo.find(index => index.id == id)].isComplete == true ?todo[id].isComplete = false :todo[id].isComplete = true;
-    const ID =todo.find(index => index.id == id)
+  const completeOrUndoToDo = (id) => {const ID =todo.find(index => index.id == id)
     const bool = ID.isComplete == true ?ID.isComplete = false :ID.isComplete = true;
     const newTodo = {...todo};
     ID.isComplete = bool;
     setIscomplete(() => {
       return newTodo
     })
-    //이렇게 하지 말고 셋 스테이트 밖에 스프레드 문법을 써라
-      /*if(todo[id].isComplete === false){
-        console.log( 'affafa')
-        todo[id].isComplete = true
-        console.log(todo[id])
-      }
-      else{
-        console.log("zzzzzz")
-        todo[id].isComplete = false
-        console.log(todo[id])
-      }*/
-      //setTodo([...todo, null])
   }
 
   const todoDelete = (id) =>{
