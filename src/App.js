@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import './App.css';
+import ShowToDo from './components/TodoBox';
 // className='container'
 
-
-function ShowToDo(props){
+//스타일 같은 css요소를 jsx에서 굳이 임포트 안해도
+//여기서 임포트했다면 가져다 쓸 수 있구나
+/*function ShowToDo(props){
   const buttonString = props.todo.isComplete == false ?"완료" :"취소"
   return(
     <div className="todobox">
@@ -15,7 +17,7 @@ function ShowToDo(props){
       </div>
     </div>
   )}
-
+*/
 function App() {
 
   const [todo, setTodo] = useState([
@@ -52,7 +54,8 @@ function App() {
     }
     
   }
-  const completeOrUndoToDo = (id) => {const ID =todo.find(index => index.id == id)
+  const completeOrUndoToDo = (id) => {
+    const ID =todo.find(index => index.id == id)
     const bool = ID.isComplete == true ?ID.isComplete = false :ID.isComplete = true;
     const newTodo = {...todo};
     ID.isComplete = bool;
@@ -60,7 +63,6 @@ function App() {
       return newTodo
     }) 
   }
-
   const todoDelete = (id) =>{
     const newTodo = todo.filter((todo) => todo.id !== id)
     setTodo(newTodo)
@@ -96,7 +98,7 @@ function App() {
         <div className="todoboxcontainer">
           
           {todo.filter((list) => list.isComplete === true).map((list) =>
-          { return(<ShowToDo key = {list.id} todo={list} completeOrUndoToDo = {completeOrUndoToDo} todoDelete ={todoDelete}/>)})}
+          { return(<ShowToDo todo={list} completeOrUndoToDo = {completeOrUndoToDo} todoDelete ={todoDelete}/>)})}
         </div>
       </div>
     </div>
