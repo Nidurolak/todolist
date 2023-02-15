@@ -3,6 +3,7 @@ import { useDispatch,useSelector } from 'react-redux';
 import './App.css';
 import ShowToDo from './components/TodoBox';
 import { addTodo,deleteTodo, toggleStatusTodo } from './redux/modules/todo';
+import Router from './shared/Router';
 
 function App() {
   const dispatch = useDispatch()
@@ -39,12 +40,12 @@ function App() {
     dispatch(toggleStatusTodo(id)) 
   }
   const todoDelete = (id) =>{
-    const newTodo = todo.filter((todo) => todo.id !== id)
     dispatch(deleteTodo(id))
     console.log(todo)
   }
 
   return (<>
+    <Router />
     <div className='defaultlayout'>
       <div className='titlecontainer'>
         <div className="title">해야 할 일 목록</div>
