@@ -1,22 +1,18 @@
 import { useState } from 'react';
 import { useDispatch,useSelector } from 'react-redux';
-import { BrowserRouter, useNavigate, } from 'react-router-dom';
-import './App.css';
-import ShowToDo from './components/TodoBox';
-import { addTodo,deleteTodo, toggleStatusTodo } from './redux/modules/todo';
-import Router from './shared/Router';
+import '../App.css';
+import ShowToDo from '../components/TodoBox';
+import { addTodo,deleteTodo, toggleStatusTodo } from '../redux/modules/todo';
 
 function App() {
 
-  return <Router />
+  //const navi = useNavigate();
+  //return <Router />
   
-  /*
   const dispatch = useDispatch()
   const todo = useSelector((state) => state.todo.todos)
   const[todoName, setName] = useState('')
   const[todoContents, setComment] = useState('')
-  const[isComplete, setIscomplete] = useState(false)
-
   const addTodoList = () =>{
     if(todoName != '' && todoContents != ''){
       console.log(todo[1])
@@ -49,9 +45,11 @@ function App() {
     console.log(todo)
   }
 
-  return (<>
+  /*return(<>
   <Router />
-  <BrowserRouter>
+  </>)*/
+  
+  return (<>
     <div className='defaultlayout'>
       <div className='titlecontainer'>
         <div className="title">해야 할 일 목록</div>
@@ -85,9 +83,8 @@ function App() {
         </div>
       </div>
     </div>
-  </BrowserRouter>
 
-  </>);*/
+  </>);
   
 }
 

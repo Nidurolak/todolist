@@ -5,6 +5,23 @@
   margin: 0 auto;
 }
 
+.sangsaecontainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+} 
+
+.sangsaeBox{
+  max-width: 300px;
+  width: 50%;
+  padding: 10px 10px 10px 10px;
+  color: gold;
+  border: 4px solid gold;
+  border-radius: 15px;
+  background-color: rgb(80, 45, 0);
+}
+
 .titlecontainer{
   display: flex;
   align-items: center;
@@ -52,6 +69,7 @@
 }
 
 .submitbutton{
+  text-align-last: center;
   width: 100px;
   height: 30px;
   color: rgb(80, 45, 0)black;
